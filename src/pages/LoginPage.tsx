@@ -48,12 +48,35 @@ export default function LoginPage(){
         <form className="mx-auto flex max-w-sm flex-col gap-4 rounded-xl bg-white p-6 shadow" onSubmit={handleSubmit}>
         <h1 className="self-center">Login</h1>
 
-        <input required type="email" className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
-        value={login} onChange={e => setLogin(e.target.value)} placeholder="Login"/>
-        <input required type="password" className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
-        value={password} minLength={8} maxLength={72} onChange={e => setPassword(e.target.value)} placeholder="Password"/>
-        <button className="w-full rounded-lg bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-700" 
-        type="submit">Log in</button>
+        <input
+            required
+            type="email"
+            name="email"
+            autoComplete="username"
+            className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={login}
+            onChange={e => setLogin(e.target.value)}
+            placeholder="Login"
+            />
+       <input
+            required
+            type="password"
+            name="password"
+            autoComplete="current-password"
+            minLength={8}
+            maxLength={72}
+            className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            placeholder="Password"
+            />
+        <button
+            disabled={loading}
+            className="w-full rounded-lg bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-700 disabled:opacity-50"
+            type="submit"
+            >
+            {loading ? "Logging in..." : "Log in"}
+        </button>
         <div>{error? <p>{`${error}`}</p>: ``}</div>
         <div>{loading? <p>Loading...</p>: ``}</div>
 

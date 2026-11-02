@@ -10,7 +10,7 @@ The app is a single-page React application that talks to the REST API from the b
 
 ## Live demo
 
-- **App:** TODO: add the deployed frontend link here
+- **App:** https://url-shortener-perflx.onrender.com/
 - **API:** https://url-shortener-d53t.onrender.com
 
 > The API runs on Render's free tier and goes to sleep after a period of inactivity. The first request after a pause (for example the first login) can take up to a minute while the server wakes up.
